@@ -45,6 +45,7 @@ public class GrammarBasedParser implements RecipeParser {
   private final String recipe;
   private final DirectiveContext context;
 
+  
   public GrammarBasedParser(String namespace, String recipe, DirectiveRegistry registry) {
     this(namespace, recipe, registry, new NoOpDirectiveContext());
   }
