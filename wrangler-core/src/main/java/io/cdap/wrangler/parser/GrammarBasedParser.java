@@ -102,8 +102,10 @@ public class GrammarBasedParser implements RecipeParser {
     } catch (DirectiveLoadException | DirectiveNotFoundException | DirectiveParseException e) {
       throw new RecipeException(e.getMessage(), e, directiveIndex.get());
     } catch (Exception e) {
+
       throw new RecipeException(e.getMessage(), e);
     }
+    
   }
   public Token visitByteSizeArg(ByteSizeArgContext ctx) {
         return new ByteSize(ctx.getText());

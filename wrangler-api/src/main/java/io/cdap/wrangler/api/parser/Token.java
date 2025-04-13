@@ -22,6 +22,7 @@ import io.cdap.wrangler.api.annotations.PublicEvolving;
 import java.io.Serializable;
 
 /**
+ * 
  * The Token class represents the object that contains the value and type of
  * the token as parsed by the parser of the grammar defined for recipe.
  *

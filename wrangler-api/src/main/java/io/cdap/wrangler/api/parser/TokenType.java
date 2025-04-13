@@ -157,6 +157,7 @@ public enum TokenType implements Serializable {
   IDENTIFIER,
 
   /*Token representing byte size */
+  
   BYTE_SIZE,
 
   /*token representing Time duration */

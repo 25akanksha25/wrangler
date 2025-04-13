@@ -35,6 +35,7 @@ public class TimeDuration implements Token {  // Implement Token instead of exte
         String unit = token.replaceAll("[\\d.]", "").toLowerCase();  // Extract unit
         
         double duration = Double.parseDouble(durationStr);
+        
         switch (unit) {
             case "ms":
                 return (long) duration;
