@@ -317,6 +317,19 @@ public final class RecipeVisitor extends DirectivesBaseVisitor<RecipeSymbol.Buil
     return builder;
   }
 
+  @Override
+public RecipeSymbol.Builder visitValue(DirectivesParser.ValueContext ctx) {
+  if (ctx.String() != null) {
+    String text = ctx.String().getText();
+    builder.addToken(new Text(text.substring(1, text.length() - 1)));
+  } else if (ctx.Number() != null) {
+    builder.addToken(new Numeric(new LazyNumber(ctx.Number().getText())));
+  } else if (ctx.Bool() != null) {
+    builder.addToken(new Bool(Boolean.valueOf(ctx.Bool().getText())));
+  }
+  return builder;
+}
+
   private SourceInfo getOriginalSource(ParserRuleContext ctx) {
     int a = ctx.getStart().getStartIndex();
     int b = ctx.getStop().getStopIndex();
